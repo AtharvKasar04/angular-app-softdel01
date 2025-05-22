@@ -1,0 +1,20 @@
+<div class="productEl">
+    @if (product().stock) {
+    <span class="stockIndicator" style="color: green;">{{ product().stock + ' Left' }}</span>
+    } @else {
+    <span class="stockIndicator" style="color: red;">Out of Stock</span>
+    }
+
+    <div class="productImageContainer">
+        <img [src]="product().image" alt="product-image" class="productImage">
+    </div>
+
+    <h3 class="productTitle">{{ product().title }}</h3>
+
+    <span class="productPrice">{{ '$' + product().price }}</span>
+
+    <app-primary-button label="Add to cart" class="addToCartBtn"
+        (btnClicked)="cartService.addToCard(product())"></app-primary-button>
+
+    <button class="viewProductBtn" [routerLink]="['/product', product().id]">View Details</button>
+</div>

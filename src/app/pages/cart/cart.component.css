@@ -1,0 +1,19 @@
+.cartHeading{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.noItems{
+    text-align: center;
+    color: red;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-color: white;
+    padding: 8px 16px;
+    width: fit-content;
+    margin: 0px auto;
+    border-radius: 6px;
+    border: 2px solid black;
+}

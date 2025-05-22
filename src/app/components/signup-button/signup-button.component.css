@@ -1,0 +1,17 @@
+.signupBtn {
+    padding: 8px 16px;
+    border: 1px solid blue;
+    color: white;
+    border-radius: 6px;
+    background-color: blue;
+    font-weight: bold;
+    margin: 0px 4px;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+}
+
+.signupBtn:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}

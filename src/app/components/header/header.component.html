@@ -1,0 +1,13 @@
+<div class="headerComponent">
+    <button class="myStoreBtn" routerLink="/">My Store</button>
+
+    
+    <div class="navBtns">
+        <app-login-button label="Login" routerLink="/login"></app-login-button>
+        <app-signup-button label="Signup" routerLink="/signup"></app-signup-button>
+        
+        <button class="usersDashboardBtn" routerLink="/users-dashboard">Users dashboard</button>
+    </div>
+
+    <app-primary-button [label]="'Cart (' + cartService.cart().length +')'" (btnClicked)="showButtonClicked()" routerLink="/cart"></app-primary-button>
+</div>

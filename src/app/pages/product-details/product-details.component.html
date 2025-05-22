@@ -1,0 +1,19 @@
+<div class="product-details-wrapper">
+  @if (title) {
+    <div class="product-details-card">
+      <div class="product-image-container">
+        <img [src]="image" alt="Product Image" class="product-image" />
+      </div>
+
+      <div class="product-info">
+        <h2 class="product-title">{{ title }}</h2>
+        <p class="product-description">{{ description }}</p>
+        <p class="product-price">$ {{ price }}</p>
+      </div>
+    </div>
+  } @else {
+    <div class="not-found">
+      <p>Product not found.</p>
+    </div>
+  }
+</div>

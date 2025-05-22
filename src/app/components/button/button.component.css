@@ -1,0 +1,13 @@
+.remBtn{
+    background-color: white;
+    color: black;
+    border: none !important;
+    padding: 8px 16px;
+    box-shadow: 0px 2px 10px 0px gray;
+    border-radius: 8px;
+}
+
+.remBtn:hover{
+    background-color: slategray;
+    cursor: pointer;
+}

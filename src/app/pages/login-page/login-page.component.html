@@ -1,0 +1,45 @@
+<div class="login-main">
+    <div class="loginContainer">
+        <h2>Login</h2>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="loginForm">
+
+            <input type="email" formControlName="email" placeholder="email" autocomplete="off" />
+
+            @if (email?.touched && email?.invalid) {
+            <div class="error">
+                @if (email?.errors?.['required']) {
+                <small>Email is required.</small>
+                }
+                @if (email?.errors?.['email']) {
+                <small>Invalid email format.</small>
+                }
+            </div>
+            }
+
+            <div class="passwordDiv">
+                <input [type]="passwordHidden() ? 'password' : 'text'" formControlName="password" placeholder="password" />
+
+                <button type="button" (click)="showHidePassword()" class="showHidePasswordBtn">
+                    {{ passwordHidden() ? 'Show' : 'Hide' }} Password
+                </button>
+
+            </div>
+
+            @if (password?.touched && password?.invalid) {
+            <div class="error">
+                @if (password?.errors?.['required']) {
+                <small>Password is required.</small>
+                }
+            </div>
+            }
+
+            <button type="submit" class="loginBtn" [disabled]="loginForm.invalid">Login</button>
+        </form>
+
+        <p class="loginPara">
+            Don't have an account?
+            <a routerLink="/signup">Signup here</a>
+        </p>
+    </div>
+</div>

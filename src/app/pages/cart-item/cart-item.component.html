@@ -1,0 +1,8 @@
+<div class="cartItemComponent">
+    <img [src]="item().image" alt="" class="cartItemImage">
+    <div class="cartItemDetails">
+        <span class="cartItemTitle" style="font-weight: bold;">{{ item().title }}</span>
+        <span class="cartItemPrice">{{ '$' + item().price }}</span>
+    </div>
+    <app-button label="Remove" (btnClicked)="cartService.removeFromCart(item().id)"></app-button>
+</div>

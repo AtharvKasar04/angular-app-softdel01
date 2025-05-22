@@ -1,0 +1,22 @@
+<!-- <button (click)="getUsers()">Get users</button> -->
+<div class="userDashboardContainer">
+
+    @if(userService.users().length === 0) {
+    <div class="noUsers">There are no Users to display at moment.</div>
+    } @else {
+    <table class="user-table">
+        <tr>
+            <th>User id</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+        @for(user of userService.users(); track $index) {
+        <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+        </tr>
+        }
+    </table>
+    }
+</div>
