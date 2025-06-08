@@ -5,4 +5,9 @@ export interface Product {
     description: string;
     price: number;
     stock?: number;
+    category: string;
+    rating: {
+        'rate': number;
+        'count': number;
+    }
 }
