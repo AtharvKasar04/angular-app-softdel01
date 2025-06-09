@@ -17,6 +17,12 @@ export class ProductApiService {
   http: HttpClient;
 
   getAllProducts(): Observable<any> {
+    console.log('getAllProducts called from product-api.service.ts');
+    
     return this.http.get(this.apiUrl);
+  }
+
+  getProductById(id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}`);
   }
 }

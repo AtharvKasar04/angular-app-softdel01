@@ -2,6 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { Product } from '../../models/products.model';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductService } from '../../services/product.service';
+import { ProductApiService } from '../../services/product-api.service';
 
 @Component({
     selector: 'app-products-list',
@@ -37,5 +38,21 @@ export class ProductsListComponent {
         }
     ])
 
+    productsFromAPI = signal<Product[]>([])
+
+    productApiService = inject(ProductApiService)
+
     productService = inject(ProductService);
+
+    getProductsFromApi(): void {
+        console.log('getProductsFromApi called!');
+
+        this.productApiService.getAllProducts().subscribe({
+            next: (data) => {
+                this.productsFromAPI.set(data);
+                console.log(`Products received from the API: ${JSON.stringify(this.productsFromAPI())}`);
+            },
+            error: (error) => console.error(`Error fetching products: ${error}`)
+        });
+    }
 }

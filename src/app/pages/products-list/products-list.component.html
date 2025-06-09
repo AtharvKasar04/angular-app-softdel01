@@ -1,5 +1,7 @@
 <div class="productsContainer">
-    @for (product of products(); track product.id) {
-        <app-product-card [product]="product"></app-product-card>
+    @for (product of productsFromAPI(); track product.id) {
+    <app-product-card [product]="product"></app-product-card>
     }
 </div>
+
+<button class="getProductsBtn" (click)="getProductsFromApi()">Get products from API</button>
